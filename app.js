@@ -12,7 +12,7 @@ var combo   = require('combohandler'),
 
 // -- Configure ----------------------------------------------------------------
 
-app.set('name', 'Leslie-Eric Wedding');
+app.set('name', 'Savannah and Konstantin\'s Wedding');
 app.set('env', config.env);
 app.set('port', config.port);
 app.set('views', config.dirs.views);
@@ -33,26 +33,17 @@ app.engine('hbs', exphbs({
 app.expose(config.yui.config, 'window.YUI_config');
 
 app.locals({
-    title   : 'Leslie & Eric',
-    appTitle: 'L&E Wedding',
+    title   : 'Savannah & Konstantin',
+    appTitle: 'S&K Wedding',
 
     version    : config.version,
     yui_version: config.yui.version,
 
     nav: [
-        {id: 'wedding',   url: '/wedding/',   label: 'Wedding'},
-        {id: 'logistics', url: '/logistics/', label: 'Logistics'},
-        {id: 'registry',  url: '/registry/',  label: 'Registry'},
+        {id: 'wedding',   url: '/wedding/',   label: 'The Wedding'},
+        {id: 'details', url: '/details/', label: 'Details'},
         {id: 'rsvp',      url: '/rsvp/',      label: 'RSVP'}
     ],
-
-    subnav: {
-        logistics: [
-            {id: 'logistics', url: '/logistics/',         label: 'Logistics'},
-            {id: 'hotels',    url: '/logistics/hotels/',  label: 'Hotels'},
-            {id: 'outings',   url: '/logistics/outings/', label: 'Outings'}
-        ]
-    },
 
     yui_module: 'le-main',
 
@@ -103,11 +94,7 @@ app.get('/', routes.render('home'));
 
 app.get('/wedding/', routes.render('wedding'));
 
-app.get('/logistics/',         routes.render('logistics'));
-app.get('/logistics/hotels/',  routes.render('logistics/hotels'));
-app.get('/logistics/outings/', routes.render('logistics/outings'));
-
-app.get('/registry/', routes.render('registry'));
+app.get('/details/', routes.render('details'));
 
 app.get( '/rsvp/',                       routes.rsvp.pub, routes.rsvp.edit);
 app.post('/rsvp/',                       routes.rsvp.resend);

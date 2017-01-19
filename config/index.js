@@ -13,7 +13,7 @@ config = {
     port    : env.PORT || 5000,
 
     session: {
-        key   : 'le.session',
+        key   : 'sk.session',
         secret: env.SESSION_SECRET,
 
         cookie: {
@@ -30,7 +30,7 @@ config = {
     },
 
     email: {
-        from: 'Leslie & Eric <rsvp@leslie-eric.us>'
+        from: 'Sav & Kosti <rsvp@savannah-konstantin.com>'
     },
 
     dirs: {
@@ -41,7 +41,7 @@ config = {
         emails  : path.resolve('views/emails/')
     },
 
-    date: new Date('Sat Oct 5 2013 4:30:00 GMT-0400 (EDT)'),
+    date: new Date('Sat Aug 26 2017 4:30:00 GMT-0400 (EDT)'),
 
     version: require('../package').version,
 

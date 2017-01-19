@@ -10,10 +10,10 @@ exports.config  = {
     root   : YUI_VERSION + '/',
 
     modules: {
-        'mapbox-css': 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css',
+        'mapbox-css': 'https://api.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css',
 
-        'mapbox': {
-            fullpath: 'http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js',
+        'mapboxgl': {
+            fullpath: 'https://api.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js',
             requires: ['mapbox-css']
         }
     },
@@ -41,7 +41,7 @@ exports.config  = {
 
                 'le-maps': {
                     path    : 'js/maps.js',
-                    requires: ['node-base', 'mapbox']
+                    requires: ['node-base', 'mapboxgl']
                 },
 
                 'le-rsvp': {

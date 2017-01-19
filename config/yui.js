@@ -26,9 +26,6 @@ exports.config  = {
             root     : '/',
 
             modules: {
-                'hide-address-bar': {
-                    path: 'vendor/hide-address-bar/hide-address-bar.js'
-                },
 
                 'le-home': {
                     use: ['le-main', 'le-maps']
@@ -36,7 +33,7 @@ exports.config  = {
 
                 'le-main': {
                     path    : 'js/main.js',
-                    requires: ['node-base', 'hide-address-bar']
+                    requires: ['node-base']
                 },
 
                 'le-maps': {

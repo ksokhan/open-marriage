@@ -36,6 +36,11 @@ exports.config  = {
                     requires: ['node-base']
                 },
 
+                'autoprefixer': {
+                  path : 'js/autoprefixer.js',
+                  requires: ['node-base']
+                },
+                
                 'le-maps': {
                     path    : 'js/maps.js',
                     requires: ['node-base', 'mapboxgl']

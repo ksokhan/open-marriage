@@ -6,6 +6,7 @@ html {
   color: #9197B3;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
 }
 
 body {

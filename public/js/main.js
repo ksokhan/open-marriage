@@ -9,5 +9,5 @@ YUI.add('le-main', function (Y) {
     });
 
 }, '1.8.0', {
-    requires: ['node-base']
+    requires: ['node-base', 'autoprefixer']
 });

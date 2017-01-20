@@ -1,6 +1,85 @@
+html {
+  font-family: 'neuzeit-grotesk', Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: #9197B3;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 100px 40px 40px;
+}
+
+h1, h2, h3, h4, h5 {
+  text-rendering: optimizeLegibility;
+}
+
 .mapboxgl-marker {
   border-radius: 10px;
   width: 20px;
   height: 20px;
   background: red;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.nav-title {
+  font-size: 22px;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.nav-title a {
+  display: inline-block;
+  text-decoration: none;
+  color: #DE3C3C;
+  padding: 10px;
+}
+
+.nav .nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  flex: 1;
+  display: flex;
+  margin: 0;
+  margin-right: 300px;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list li {
+  display: flex;
+  padding: 0 10px;
+}
+
+.nav-list a {
+  color: #a1a7c3;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.nav-list a:hover {
+  opacity: 0.6;
+}
+
+.nav-list .is-nav-item-active a {
+  color: #3946C8;
 }

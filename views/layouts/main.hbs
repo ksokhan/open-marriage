@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-title" content="{{appTitle}}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-title" content="{{appTitle}}">
 
-    <title>{{pageTitle}}</title>
+  <title>{{pageTitle}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://use.typekit.net/eix2gnv.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
   {{#if description}}
     <meta name="description" content="{{description}}">
   {{/if}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-    {{addCSS "/css/main.css"                       prepend=true}}
+  {{addCSS "/css/main.css" prepend=true}}
 
   {{#css}}
     <link rel="stylesheet" href="{{{url}}}">
@@ -32,7 +34,7 @@
 
 <body class="{{#if invitation}}is-invited{{/if}}">
 
-{{> nav}}
+<!-- {{> nav}} -->
 
 {{{body}}}
 

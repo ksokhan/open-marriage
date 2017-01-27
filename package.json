@@ -30,7 +30,7 @@
         "bower"              : "1.2.x",
         "combohandler"       : "0.2.x",
         "csv"                : "0.3.x",
-        "db-migrate"         : "0.4.x",
+        "db-migrate"         : "0.4.1",
         "deep-freeze"        : "0.0.1",
         "express"            : "3.2.4",
         "express-slash"      : "0.2.0",
@@ -43,6 +43,6 @@
 
     "scripts": {
         "dev": "docker-compose up",
-        "migrate-up": "./node_modules/db-migrate/bin/db-migrate up -e default --config config/migrations.json"
+        "migrate-up": "./node_modules/db-migrate/bin/db-migrate up --config /app/config/migrations.json -e default"
     }
 }

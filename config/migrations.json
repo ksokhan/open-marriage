@@ -1,5 +1,8 @@
 {
     "default": {
         "driver": "pg"
+    },
+    "staging": {
+      "driver": "pg"
     }
 }

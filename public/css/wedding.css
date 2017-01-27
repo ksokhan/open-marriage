@@ -1,15 +1,7 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-#map {
-    width: 100%;
-    height: 62%;
-    min-height: 300px;
-    top: 120px;
-    left: 0;
-    background: #fff;
+.centered_text {
+  color: #a1a7c3;
+  font-weight: normal;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  text-align: center;
 }

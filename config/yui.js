@@ -31,6 +31,14 @@ exports.config  = {
                     use: ['le-main', 'le-maps']
                 },
 
+                'gumshoe': {
+                  path: 'js/gumshoe.js'
+                },
+
+                'smoothscroll': {
+                  path: 'js/smoothscroll.js'
+                },
+
                 'le-main': {
                     path    : 'js/main.js',
                     requires: ['node-base']
@@ -40,7 +48,7 @@ exports.config  = {
                   path : 'js/autoprefixer.js',
                   requires: ['node-base']
                 },
-                
+
                 'le-maps': {
                     path    : 'js/maps.js',
                     requires: ['node-base', 'mapboxgl']

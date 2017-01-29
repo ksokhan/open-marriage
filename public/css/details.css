@@ -9,6 +9,11 @@
   text-decoration: none;
   display: block;
   color: #2D2D51;
+  opacity: 0.5;
+}
+
+.sidebar a.active {
+  opacity: 1;
 }
 
 .anchor {
@@ -25,10 +30,10 @@
 
 .content h2 {
   color: #2D2D51;
-  margin: 80px 0 0;
+  margin: 140px 0 0;
   font-size: 0.65em;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
@@ -51,6 +56,10 @@
   font-weight: 300;
   margin-top: 0.8em;
   letter-spacing: 0.01em;
+}
+
+.content b {
+  font-weight: 600;
 }
 
 .grid-2 {

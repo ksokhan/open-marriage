@@ -7,6 +7,7 @@ html {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: grayscale;
+  background: #FAF9F8;
 }
 
 body {
@@ -70,7 +71,7 @@ h1, h2, h3, h4, h5 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 70px;
 }
 
 .nav-title {
@@ -80,10 +81,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .nav-title a {
+  background-image: url("/logo@2x.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: -999em;
+  width: 205px;
+  height: 24px;
+  margin-bottom: 6px;
   display: inline-block;
   text-decoration: none;
   color: #2D2D51;
-  padding: 10px;
 }
 
 .nav .nav-toggle {
@@ -94,10 +101,9 @@ h1, h2, h3, h4, h5 {
   flex: 1;
   display: flex;
   margin: 0;
-  margin-right: 300px;
+  margin-right: 200px;
   flex-direction: row;
   list-style-type: none;
-  align-items: center;
   justify-content: center;
 }
 
@@ -108,10 +114,15 @@ h1, h2, h3, h4, h5 {
 
 .nav-list a {
   color: #a1a7c3;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 600;
   text-decoration: none;
-  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 64px;
+  height: 68px;
+  padding: 0 15px;
+  border-top: solid 2px transparent;
 }
 
 .nav-list a:hover {
@@ -121,4 +132,5 @@ h1, h2, h3, h4, h5 {
 .nav-list .is-nav-item-active a {
   opacity: 1 !important;
   color: #3946C8;
+  border-top-color: #3946C8;
 }

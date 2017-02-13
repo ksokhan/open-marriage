@@ -2,7 +2,7 @@
     "name"       : "sk_app",
     "description": "The open source website for Leslie Verploegen's and Eric Ferraiuolo's wedding.",
     "homepage"   : "https://savannah-konstantin.com/",
-    "version"    : "1.8.3",
+    "version"    : "1.8.4",
     "private"    : true,
 
     "author": "Eric Ferraiuolo <eferraiuolo@gmail.com> (http://ericf.me/)",

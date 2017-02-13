@@ -1,8 +1,8 @@
-body {
+.mainContent {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -11,15 +11,29 @@ body {
   font-size: 38px;
   letter-spacing: 0.03em;
   text-align: center;
+  display: flex;
+  margin-top: 0;
 }
 
 
-/* 480px */
-@media screen and (min-width: 30em) {
+.logo_image {
+  max-height: 1200px;
+  height: 300px;
+}
 
+/* 1.5 dpr */
+@media
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi){
+  .logo_image {
+    max-height: 600px;
+  }
 }
 
 /* 568px */
 @media screen and (min-width: 35.5em) {
-
+  .logo_image {
+    height: 75vh;
+    max-width: none;
+  }
 }

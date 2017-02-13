@@ -1,3 +1,10 @@
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 input[type="email"], input[type="text"] {
   font-size: 20px;
   padding: 0.6em 0.7em 0.7em;

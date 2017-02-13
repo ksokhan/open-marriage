@@ -1,11 +1,11 @@
 {
     "name"       : "sk_app",
-    "description": "The open source website for Leslie Verploegen's and Eric Ferraiuolo's wedding.",
+    "description": "Sav and Kosti's Wedding.",
     "homepage"   : "https://savannah-konstantin.com/",
-    "version"    : "1.8.4",
+    "version"    : "1.8.5",
     "private"    : true,
 
-    "author": "Eric Ferraiuolo <eferraiuolo@gmail.com> (http://ericf.me/)",
+    "author": "Konstantin Sokhan",
 
     "license": "MIT",
 

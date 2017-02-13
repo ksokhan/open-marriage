@@ -12,7 +12,7 @@
   letter-spacing: 0.03em;
   text-align: center;
   display: flex;
-  margin-top: 0;
+  margin-top: -20px;
 }
 
 
@@ -33,7 +33,7 @@
 /* 568px */
 @media screen and (min-width: 35.5em) {
   .logo_image {
-    height: 75vh;
+    height: 50vh;
     max-width: none;
   }
 }

@@ -150,6 +150,6 @@ h1, h2, h3, h4, h5 {
 
 .nav-list .is-nav-item-active a span {
   border-bottom: solid 2px #5F71EC;
-  padding-bottom: 2px;
+  padding-bottom: 3px;
   padding-left: 1px;
 }

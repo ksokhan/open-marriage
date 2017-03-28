@@ -12,5 +12,5 @@ YUI.add('le-main', function (Y) {
   smoothScroll.init();
 
 }, '1.8.0', {
-    requires: ['node-base', 'autoprefixer', 'le-maps', 'gumshoe', 'smoothscroll']
+    requires: ['node-base', 'autoprefixer', 'gumshoe', 'smoothscroll']
 });

@@ -1,8 +1,52 @@
 .mainContent {
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  margin: 1em 0 0.2em;
+}
+
+.inv {
+  flex: 1;
+  border: solid 1px #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 auto 50px;
+  width: 700px;
+  max-width: 96vw;
+}
+
+.inv-header {
+  display: flex;
   align-items: center;
+  margin: 0;
+  background: #F9F9FB;
+  padding: 20px;
+  border-bottom: solid 1px #ddd;
+}
+
+.inv-status {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.inv-done {
+  background: green;
+}
+
+.inv-done:hover {
+  background: green;
+  opacity: 0.8;
 }
 
 input[type="email"], input[type="text"] {
@@ -34,15 +78,181 @@ button {
   cursor: pointer;
 }
 
+.guest-add {
+  background: white;
+  border: solid 1px #4956D8;
+  color: #3946C8;
+}
+
+.guest-add:hover {
+  background: #eef;
+}
+
+
 button:hover {
   background: #4956D8;
 }
 
-button.is-disabled {
+.is-disabled {
   background: #a1a7c3;
 }
 
+
 .warning {
   color: red;
-
 }
+
+
+.guest {
+  padding: 40px 30px 40px;
+  border-bottom: solid 1px #ccc;
+}
+
+.guest:last-child {
+  border-bottom: 0 none;
+}
+
+.form-row .question {
+  margin-top: 40px;
+  display: block;
+}
+
+.guest-attending {
+  color: #FF8263;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.is-guest-attending .guest-attending {
+ color: #24ABC3;
+}
+.is-guest-attending .guest-attending b { display: none; }
+
+.guest-salutation {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.guest-summary {
+  font-size: 0.85em;
+}
+
+.menu-option {
+  display: inline-block;
+  border: solid 1px #ddd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 10px 5px 0 0;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.menu-option input {
+  vertical-align: top;
+  margin-top: 5px;
+}
+
+input:invalid {
+  border-color: red;
+  background: #fee;
+}
+
+.menu-option:hover {
+  background: #E3F4FF;
+}
+
+.guest-title-val,
+.inv-address,
+.inv-address-val { display: none !important; }
+
+
+.guest-ctrls {
+  width: 100%;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.guest-allergies-val input {
+  margin-top: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* logic for rsvp */
+
+/* edit button */
+.inv-done { display: none; }
+.is-inv-editing .inv-edit { display: none; }
+.is-inv-editing .inv-done { display: inline-block; }
+
+.guest-basics,
+.guest-summary,
+.guest-details,
+.guest-form,
+.form-extras {
+  max-height: 2000px;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.3s ease-in, max-height 0.3s ease-in-out;
+}
+
+.guest-basics,
+.guest-form,
+.guest-summary,
+.form-extras {
+  opacity: 0;
+  max-height: 0;
+}
+
+.is-guest-attending .guest-summary,
+.is-guest-attending .guest-basics,
+.guest-basics {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+/*-----------------------------*/
+/* Preview */
+
+/* hide Details info if plus one not added */
+.guest-available .guest-summary {
+  opacity: 0;
+  max-height: 0;
+}
+
+
+/*-----------------------------*/
+/* Editor */
+
+.is-inv-editing .guest-basics,
+.is-inv-editing .guest-summary {
+  max-height: 0;
+  opacity: 0;
+}
+
+.is-inv-editing .guest-form {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+/* Editor: hide details if guest not added */
+.guest-available .guest-details {
+  opacity: 0;
+  max-height: 0;
+}
+
+.is-guest-attending .form-extras {
+  opacity: 1;
+  max-height: 2000px;
+}
+
+.is-inv-editing .guest {
+  color: inherit;
+}
+
+
+/*-----------------------------*/
+/* add a guest button */
+
+.guest-ctrls { display: none; }
+.guest-available .guest-ctrls { display: block; }

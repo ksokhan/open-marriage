@@ -22,7 +22,6 @@ process.stdin.once('data', function (answer) {
 
 function sendRsvpEmails() {
     console.log('Loading invitations from database...');
-
     invs.loadInvitations(function (err, invitations) {
         if (err) { throw err; }
 

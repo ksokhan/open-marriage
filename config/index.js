@@ -17,7 +17,7 @@ config = {
         secret: env.SESSION_SECRET,
 
         cookie: {
-            maxAge: 7 * 24 * 60 * 60 * 1000 // 1 week
+            maxAge: 7 * 24 * 60 * 60 * 10000
         }
     },
 

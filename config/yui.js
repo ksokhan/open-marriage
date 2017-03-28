@@ -10,12 +10,6 @@ exports.config  = {
     root   : YUI_VERSION + '/',
 
     modules: {
-        'mapbox-css': 'https://api.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css',
-
-        'mapboxgl': {
-            fullpath: 'https://api.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js',
-            requires: ['mapbox-css']
-        }
     },
 
     groups: {
@@ -28,7 +22,7 @@ exports.config  = {
             modules: {
 
                 'le-home': {
-                    use: ['le-main', 'le-maps']
+                    use: ['le-main']
                 },
 
                 'gumshoe': {
@@ -47,11 +41,6 @@ exports.config  = {
                 'autoprefixer': {
                   path : 'js/autoprefixer.js',
                   requires: ['node-base']
-                },
-
-                'le-maps': {
-                    path    : 'js/maps.js',
-                    requires: ['node-base', 'mapboxgl']
                 },
 
                 'le-rsvp': {
@@ -75,7 +64,7 @@ exports.config  = {
 
                 'le-wedding': {
                     path: 'js/wedding.js',
-                    requires: ['le-main', 'le-maps', 'event-resize', 'graphics']
+                    requires: ['le-main', 'event-resize', 'graphics']
                 }
             }
         }

@@ -131,6 +131,7 @@ YUI.add('le-rsvp', function (Y) {
             '[data-done]'     : {click: 'done'},
             '[data-add-guest]': {click: 'addGuest'},
             '[data-attending]': {click: 'proposeUpdates'},
+            '[data-barbecue]' : {click: 'proposeUpdates'},
             '[data-meal]'     : {click: 'proposeUpdates'},
             'input, textarea' : {blur: 'proposeUpdates'}
         },
@@ -151,7 +152,7 @@ YUI.add('le-rsvp', function (Y) {
             this.get('container').removeClass('is-inv-editing');
 
             invitation.get('guests').plusones().each(function (guest) {
-                if (!guest.get('name')) {
+                if (!guest.get('name') || !guest.get('is_attending')) {
                     guest.set('is_attending', null);
                     this.getGuestNode(guest).addClass('guest-available');
                 }
@@ -196,9 +197,10 @@ YUI.add('le-rsvp', function (Y) {
 
                 invitation.guests.push({
                     id          : parseInt(node.getData('guest'), 10),
-                    title       : node.one('[data-title]').get('value'),
                     name        : node.one('[data-name]').get('value'),
-                    is_attending: node.one('[data-attending]').get('checked'),
+                    is_attending_barbecue: node.all('[data-barbecue]').filter('[value="true"]').get('checked')[0],
+                    is_attending: node.all('[data-attending]').filter('[value="true"]').get('checked')[0],
+                    allergies   : node.one('[data-allergies]').get('value'),
                     meal        : meal
                 });
             });
@@ -232,18 +234,24 @@ YUI.add('le-rsvp', function (Y) {
 
                 node.toggleClass('is-guest-attending', isAttending);
 
-                node.one('.guest-title').set('text', guest.get('title'));
-                node.one('[data-title]').set('value', guest.get('title'));
-
                 node.one('.guest-name').set('text', guest.get('name'));
                 node.one('[data-name]').set('value', guest.get('name'));
 
-                node.one('[data-attending]').set('checked', isAttending);
+                node.all('[data-attending]').set('checked', false)
+                    .filter('[value=' + isAttending + ']')
+                        .set('checked', true);
 
-                node.one('.guest-meal span').set('text', guest.mealLabel());
+                node.one('.guest-meal span').set('text', guest.mealLabel() || 'No meal selected');
                 node.all('[data-meal]').set('checked', false)
                     .filter('[value=' + guest.get('meal') + ']')
                         .set('checked', true);
+
+                node.all('[data-barbecue]').set('checked', false)
+                    .filter('[value=' + guest.get('is_attending_barbecue') + ']')
+                        .set('checked', true);
+
+                node.one('.guest-allergies span').set('text', guest.get('allergies'));
+                node.one('[data-allergies]').set('value', guest.get('allergies'));
             }, this);
         }
     });
@@ -251,7 +259,7 @@ YUI.add('le-rsvp', function (Y) {
 
     Y.AnnouncementView = Y.Base.create('announcementView', Y.View, [], {
         namesSeparator : ' <span class="ann-sep">&amp;</span> ',
-        attendingMsg   : 'Yay, We’re Happy You’ll Be Attending!',
+        attendingMsg   : 'We’re Happy You’ll Be Attending!',
         notAttendingMsg: 'We’re Sorry You Won’t Be Attending.',
 
         initializer: function () {

@@ -1,39 +1,104 @@
 <div class="guest {{guestAvailable}} {{guestAttending}} l-contain l-grid-u" data-guest="{{id}}">
     <div class="guest-details">
-        <h2 class="l-grid">
-            <span class="guest-salutation l-grid-u" data-icon>
-                <span class="guest-title">{{title}}</span>
-                <span class="guest-name">{{name}}</span>
-            </span>
 
-            <span class="guest-title-val l-grid-u">
-                <input type="text" value="{{title}}" placeholder="Title" data-title>
-            </span>
-            <span class="guest-name-val l-grid-u">
-                <input type="text" value="{{name}}" placeholder="Full Name" data-name>
-            </span>
-        </h2>
+      <div class="guest-basics">
+        <span class="guest-salutation l-grid-u" data-icon>
+          <span class="guest-name">{{name}}{{^name}}Your Guest{{/name}}</span>
+        </span>
+        <div class="guest-attending">Will <b>not</b> be attending</div>
+      </div>
 
-        <p class="guest-attending-val">
-            <label>
-                <input type="checkbox" data-attending {{#if is_attending}}checked{{/if}}>
-                Is Attending
+      <div class="guest-summary">
+        <div class="guest-meal">
+          <h4>Details:</h4>
+          <i>Meal selection &mdash;</i>
+          <span>
+            {{guestMeal}}
+            {{^meal}}<span style="color: #FF8263">No meal selected</span>{{/meal}}
+          </span>
+        </div>
+
+        <div class="guest-barbecue">
+          <i>Friday night barbecue & bonfire &mdash;</i>
+          <span>
+            {{#if is_attending_barbecue}} Attending {{else}} Not attending {{/if}}
+          </span>
+        </div>
+
+        <div class="guest-brunch">
+          <i>Brunch &mdash;</i>
+          <span>
+            {{#if is_attending_brunch}} Attending {{else}} Not attending {{/if}}
+          </span>
+        </div>
+
+        <div class="guest-allergies">
+          <i>Allergies &mdash;</i> <span> {{#if allergies}}{{allergies}}{{else}}None{{/if}}</span>
+        </div>
+
+      </div>
+
+      <div class="guest-form">
+          <div class="guest-name-val">
+            <input type="text" value="{{name}}" placeholder="Enter guest name" data-name required>
+          </div>
+
+          <div class="guest-attending-val">
+            <h4 class="question">Can you attend?</h4>
+            <label class="menu-option">
+              <input name="attending-{{id}}" data-attending type="radio" value="true" {{#if is_attending}}checked{{/if}} />
+              <span>Yes, I am going</span>
             </label>
-        </p>
-
-        <p class="guest-meal"><b>Main Course:</b> <span>{{guestMeal}}</span></p>
-        <p class="guest-meal-val l-grid">
-            <b class="l-grid-u-full">Main Course:</b>
-          {{#each mealOptions}}
-            <label class="l-grid-u">
-                <input type="radio" data-meal name="guest-meal-{{../id}}" value="{{id}}" {{isGuestMeal ../meal}}>
-                <span class="guest-meal-val-label">{{label}}</span>
+            <label class="menu-option negative">
+              <input name="attending-{{id}}" data-attending type="radio" value="false" {{^is_attending}}checked{{/is_attending}} />
+              <span>No, I can't attend</span>
             </label>
-          {{/each}}
-        </p>
+          </div>
+
+        <div class="form-extras">
+          <div class="guest-meal-val l-grid form-row">
+            <h4 class="question">Select a meal option:</h4>
+            {{#each mealOptions}}
+              <label class="l-grid-u menu-option">
+                  <input type="radio" data-meal name="guest-meal-{{../id}}" value="{{id}}" required {{isGuestMeal ../meal}}>
+                  <span class="guest-meal-val-label">{{label}}</span>
+              </label>
+            {{/each}}
+          </div>
+
+          <div class="guest-barbecue-val l-grid form-row">
+              <h4 class="question">Would you like to join us for a beach fire and barbecue on the friday night before the wedding?</h4>
+              <label class="menu-option">
+                <input name="barbecue-{{id}}" data-barbecue type="radio" value="true" {{#if is_attending_barbecue}}checked{{/if}} />
+                <span>Yes, I would like to join</span>
+              </label>
+              <label class="menu-option">
+                <input name="barbecue-{{id}}" data-barbecue type="radio" value="false" {{^is_attending_barbecue}}checked{{/is_attending_barbecue}} />
+                <span>No, I can't</span>
+              </label>
+          </div>
+
+          <div class="guest-brunch-val l-grid form-row">
+              <h4 class="question">Would you like come for a brunch the morning after the wedding?</h4>
+              <label class="menu-option">
+                <input name="brunch-{{id}}" data-brunch type="radio" value="true" {{#if is_attending_brunch}}checked{{/if}} />
+                <span>Yes, I would like to join</span>
+              </label>
+              <label class="menu-option">
+                <input name="brunch-{{id}}" data-brunch type="radio" value="false" {{^is_attending_brunch}}checked{{/is_attending_brunch}} />
+                <span>No, I can't</span>
+              </label>
+          </div>
+
+          <div class="guest-allergies-val form-row">
+            <h4 class="question">Do you have any allergies that we should know about?</h4>
+              <input type="text" value="{{allergies}}" placeholder="" data-allergies>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="guest-ctrls">
-        <button class="guest-add" data-icon="g" data-add-guest>Add Guest</button>
+        <button class="guest-add" data-icon="g" data-add-guest>I would like to bring a guest</button>
     </div>
 </div>

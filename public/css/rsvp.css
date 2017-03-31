@@ -1,3 +1,11 @@
+body {
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  background-image: url('../flower-border@2x.png');
+  background-size: auto 200px;
+  padding-bottom: 220px;
+}
+
 .mainContent {
   flex: 1;
   display: flex;
@@ -9,6 +17,15 @@
 
 h2 {
   text-align: center;
+  font-family: 'montana';
+  font-weight: normal;
+  color: #86af61;
+  font-size: 3em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
 }
 
 h4 {

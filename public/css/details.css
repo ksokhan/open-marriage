@@ -1,7 +1,14 @@
+body {
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  background-image: url('../flower-border@2x.png');
+  background-size: auto 200px;
+}
+
 .mainContent {
   max-width: 1160px;
-  margin: 6vw auto 8vw;
-  padding: 0 30px;
+  margin: 3vw auto 0;
+  padding: 0 30px 260px;
 }
 
 .sidebar {
@@ -14,7 +21,7 @@
 .sidebar a {
   text-decoration: none;
   display: block;
-  color: #2D2D51;
+  color: #352f7a;
   opacity: 0.5;
 }
 
@@ -35,12 +42,15 @@
 }
 
 .content h2 {
-  color: #2D2D51;
-  margin: 140px 0 0;
-  font-size: 0.65em;
-  font-weight: 800;
-  letter-spacing: 0.11em;
+  font-family: 'montana', 'sans-serif';
+  color: #86af61;
+  margin: 140px 0 -10px;
+  font-size: 1.9em;
+  line-height: 1em;
+  letter-spacing: 0.025em;
+  font-weight: normal;
   text-transform: uppercase;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .content h2:first-child {

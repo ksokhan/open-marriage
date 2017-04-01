@@ -199,6 +199,7 @@ YUI.add('le-rsvp', function (Y) {
                     id          : parseInt(node.getData('guest'), 10),
                     name        : node.one('[data-name]').get('value'),
                     is_attending_barbecue: node.all('[data-barbecue]').filter('[value="true"]').get('checked')[0],
+                    is_attending_brunch: node.all('[data-brunch]').filter('[value="true"]').get('checked')[0],
                     is_attending: node.all('[data-attending]').filter('[value="true"]').get('checked')[0],
                     allergies   : node.one('[data-allergies]').get('value'),
                     meal        : meal
@@ -246,11 +247,17 @@ YUI.add('le-rsvp', function (Y) {
                     .filter('[value=' + guest.get('meal') + ']')
                         .set('checked', true);
 
+                node.one('.guest-barbecue span').set('text', guest.get('is_attending_barbecue') ? 'Attending' : 'Not Attending');
                 node.all('[data-barbecue]').set('checked', false)
                     .filter('[value=' + guest.get('is_attending_barbecue') + ']')
                         .set('checked', true);
 
-                node.one('.guest-allergies span').set('text', guest.get('allergies'));
+                node.one('.guest-brunch span').set('text', guest.get('is_attending_brunch') ? 'Attending' : 'Not Attending' );
+                node.all('[data-brunch]').set('checked', false)
+                    .filter('[value=' + guest.get('is_attending_brunch') + ']')
+                        .set('checked', true);
+
+                node.one('.guest-allergies span').set('text', guest.get('allergies') || "None" );
                 node.one('[data-allergies]').set('value', guest.get('allergies'));
             }, this);
         }

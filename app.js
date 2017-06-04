@@ -42,6 +42,7 @@ app.locals({
     nav: [
         {id: 'home', url: '/', label: 'Home'},
         {id: 'details', url: '/details/', label: 'Info'},
+        {id: 'activities', url: '/activities/', label: 'Things to do'},
         {id: 'rsvp',      url: '/rsvp/',      label: 'RSVP'}
     ],
 
@@ -95,6 +96,7 @@ app.get('/', routes.render('home'));
 app.get('/wedding/', routes.render('wedding'));
 
 app.get('/details/', routes.render('details'));
+app.get('/activities/', routes.render('activities'));
 
 app.get( '/rsvp/',                       routes.rsvp.pub, routes.rsvp.edit);
 app.post('/rsvp/',                       routes.rsvp.resend);

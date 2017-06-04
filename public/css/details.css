@@ -41,14 +41,18 @@ body {
   color: #2D2D51;
 }
 
+.activities-content {
+  margin-left: 0;
+}
+
 .content h2 {
   font-family: 'montana', 'sans-serif';
   color: #86af61;
   margin: 140px 0 -10px;
-  font-size: 1.9em;
-  line-height: 1em;
+  font-size: 2.2em;
+  line-height: 1.1em;
   letter-spacing: 0.025em;
-  font-weight: normal;
+  font-weight: 500;
   text-transform: uppercase;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -63,6 +67,10 @@ body {
 
 .content a:visited {
   color: #7D7Da1;
+}
+
+.content a:hover {
+  color: #5F71EC;
 }
 
 .content i {
@@ -99,8 +107,52 @@ h4 {
   margin-bottom: 0.3em;
 }
 
-/* 568px */
+.activities_list {
+  color: #aaa;
+  padding-left: 0;
+  list-style-type: none;
+  counter-reset: my-counter;
+}
+
+.activities_list li {
+  margin-top: 1em;
+  padding-left: 1.8em;
+  color: #2D2D51;
+  position: relative;
+}
+
+.activities_list li:before {
+  content: counter(my-counter);
+  counter-increment: my-counter;
+  color: #a1a7c3;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  border: solid 2px #a1a7c3;
+  position: absolute;
+  left: 0;
+  margin-top: 4px;
+}
+
 @media screen and (max-width: 600px) {
   .sidebar {display: none;}
   .content {margin-left: 0;}
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .content {
+    font-size: 22px;
+    line-height: 1.45;
+  }
 }
